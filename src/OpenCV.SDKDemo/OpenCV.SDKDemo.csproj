@@ -53,6 +53,7 @@
     <Compile Include="Activities\Main.cs" />
     <Compile Include="Activities\MixedProcessing.cs" />
     <Compile Include="Activities\Puzzle.cs" />
+    <Compile Include="Activities\Puzzle15Processor.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ActivityTags.cs" />
