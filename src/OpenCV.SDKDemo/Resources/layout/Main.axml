@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/cameraPreview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="cameraPreview" />
+    <Button
+        android:id="@+id/mixedProcessing"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="mixedProcessing" />
+    <Button
+        android:id="@+id/cameraControl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="cameraControl" />
+    <Button
+        android:id="@+id/imageManipulations"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="imageManipulations" />
+    <Button
+        android:id="@+id/faceDetection"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="faceDetection" />
+    <Button
+        android:id="@+id/colorBlobDetection"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="colorBlobDetection" />
+    <Button
+        android:id="@+id/cameraCalibration"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="cameraCalibration" />
+    <Button
+        android:id="@+id/puzzle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="puzzle" />
+</LinearLayout>
