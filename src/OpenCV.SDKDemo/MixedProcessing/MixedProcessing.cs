@@ -10,10 +10,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace OpenCV.SDKDemo.Activities
+namespace OpenCV.SDKDemo.MixedProcessing
 {
     [Activity(Label = "MixedProcessing")]
-    public class MixedProcessing : Activity
+    public class MixedProcessingActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

@@ -5,18 +5,18 @@ using Android.OS;
 using Android.Util;
 using Android.Views;
 using OpenCV.SDKDemo.Utilities;
-using OpenCv.Core;
-using OpenCv.Android;
-using OpenCv;
+using OpenCV.Core;
+using OpenCV.Android;
+using OpenCV;
 
-namespace OpenCV.SDKDemo.Activities
+namespace OpenCV.SDKDemo.CameraPreview
 {
-    [Activity(Label = "CameraPreview",
+    [Activity(Label = ActivityTags.CameraPreview,
         ScreenOrientation=ScreenOrientation.Landscape,
         ConfigurationChanges=ConfigChanges.KeyboardHidden|ConfigChanges.Orientation
         //,Theme="@android:style/Theme.NoTitleBar.FullScreen"
         )]
-    public class CameraPreview : Activity, ILoaderCallbackInterface, CameraBridgeViewBase.ICvCameraViewListener
+    public class CameraPreviewActivity : Activity, ILoaderCallbackInterface, CameraBridgeViewBase.ICvCameraViewListener
     {
         private CameraBridgeViewBase _openCvCameraView;
         //private bool _isJavaCamera = true;

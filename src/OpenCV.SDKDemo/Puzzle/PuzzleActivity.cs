@@ -3,14 +3,15 @@ using Android.App;
 using Android.OS;
 using Android.Util;
 using Android.Views;
-using OpenCv.Android;
-using OpenCv.Core;
+using OpenCV.Android;
+using OpenCV.Core;
+using OpenCV.SDKDemo.Puzzle;
 using OpenCV.SDKDemo.Utilities;
 
-namespace OpenCV.SDKDemo.Activities
+namespace OpenCV.SDKDemo.Puzzle
 {
     [Activity(Label = ActivityTags.Puzzle)]
-    public class Puzzle : Activity, CameraBridgeViewBase.ICvCameraViewListener, ILoaderCallbackInterface, View.IOnTouchListener
+    public class PuzzleActivity : Activity, CameraBridgeViewBase.ICvCameraViewListener, ILoaderCallbackInterface, View.IOnTouchListener
     {
         private int _gameWidth;
         private int _gameHeight;
