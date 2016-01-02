@@ -1,5 +1,6 @@
 using Android.Util;
 using OpenCV.Core;
+using OpenCV.ImgProc;
 using OpenCV.SDKDemo.Utilities;
 using System;
 
@@ -81,8 +82,8 @@ namespace OpenCV.SDKDemo.Puzzle
         {
             for (int i = 1; i < GridSize; i++)
             {
-                //ImgProc.Line(drawMat, new Point(0, i * rows / GridSize), new Point(cols, i * rows / GridSize), new Scalar(0, 255, 0, 255), 3);
-                //Imgproc.Line(drawMat, new Point(i * cols / GridSize, 0), new Point(i * cols / GridSize, rows), new Scalar(0, 255, 0, 255), 3);
+                Imgproc.Line(drawMat, new Point(0, i * rows / GridSize), new Point(cols, i * rows / GridSize), new Scalar(0, 255, 0, 255), 3);
+                Imgproc.Line(drawMat, new Point(i * cols / GridSize, 0), new Point(i * cols / GridSize, rows), new Scalar(0, 255, 0, 255), 3);
             }
         }
 
@@ -109,9 +110,9 @@ namespace OpenCV.SDKDemo.Puzzle
 
                 for (int i = 0; i < GridArea; i++)
                 {
-                    //var s = Imgproc.GetTextSize((i+1).ToString(), 3/* CV_FONT_HERSHEY_COMPLEX */, 1, 2, null);
-                    //_textHeights[i] = (int)s.Height;
-                    //_textWidths[i] = (int)s.Width;
+                    var s = Imgproc.GetTextSize((i + 1).ToString(), 3/* CV_FONT_HERSHEY_COMPLEX */, 1, 2, null);
+                    _textHeights[i] = (int)s.Height;
+                    _textWidths[i] = (int)s.Width;
                 }
             }
         }
@@ -152,8 +153,8 @@ namespace OpenCV.SDKDemo.Puzzle
                         cells[idx].CopyTo(_cells15[i]);
                         if (_showTileNumbers)
                         {
-                           // Imgproc.PutText(_cells15[i], (1+idx).ToString(), new Point((cols / GridSize - _textWidths[idx]) / 2,
-                            //        (rows / GridSize + _textHeights[idx]) / 2), 3/* CV_FONT_HERSHEY_COMPLEX */, 1, new Scalar(255, 0, 0, 255), 2);
+                            Imgproc.PutText(_cells15[i], (1 + idx).ToString(), new Point((cols / GridSize - _textWidths[idx]) / 2,
+                                    (rows / GridSize + _textHeights[idx]) / 2), 3/* CV_FONT_HERSHEY_COMPLEX */, 1, new Scalar(255, 0, 0, 255), 2);
                         }
                     }
                 }

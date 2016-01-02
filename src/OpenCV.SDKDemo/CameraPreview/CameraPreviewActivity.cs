@@ -19,8 +19,6 @@ namespace OpenCV.SDKDemo.CameraPreview
     public class CameraPreviewActivity : Activity, ILoaderCallbackInterface, CameraBridgeViewBase.ICvCameraViewListener
     {
         private CameraBridgeViewBase _openCvCameraView;
-        //private bool _isJavaCamera = true;
-        //private IMenuItem _itemSwitchCamera = null;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

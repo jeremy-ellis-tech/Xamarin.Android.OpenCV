@@ -13,8 +13,8 @@
     <AssemblyName>OpenCV</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v4.1</TargetFrameworkVersion>
-    <Java7DocPaths>Jars\docs</Java7DocPaths>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <JavaDocPaths>Jars\docs</JavaDocPaths>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

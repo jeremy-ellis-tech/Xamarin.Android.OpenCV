@@ -1,46 +1,15 @@
 <metadata>
   
-  <!--Remove non-opencv bindings-->
-  <remove-node path="/api/package[starts-with(@name, 'org.apache')]" />
-  <remove-node path="/api/package[starts-with(@name, 'org.json')]" />
-  <remove-node path="/api/package[starts-with(@name, 'org.w3c')]" />
-  <remove-node path="/api/package[starts-with(@name, 'org.xml')]" />
-  <remove-node path="/api/package[starts-with(@name, 'org.xmlpull')]" />
-  
-  
   <add-node path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']">
     <method name="setCvCameraViewListener" return="void" abstract="false" native="false" synchronized="false" static="false" final="false" deprecated="not deprecated" visibility="public" >
       <parameter name="listener" type="org.opencv.android.CameraBridgeViewBase.CvCameraViewListener"/>
     </method>
   </add-node>
-
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='Mat']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='Point']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='Point3']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='Range']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='Rect']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='RotatedRect']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='Scalar']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='Size']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='TermCriteria']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.core']/class[@name='RotatedRect']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-  <attr path="/api/package[@name='org.opencv.features2d']/class[@name='DescriptorMatcher']/method[@name='clone' and count(parameter)=0]" name="managedName">CVClone</attr>
-
-
-  <attr path="/api/package[@name='org.opencv.ml']/class[@name='Boost']/method[@name='create' and count(parameter)=0]" name="new">true</attr>
-  <attr path="/api/package[@name='org.opencv.ml']/class[@name='RTrees']/method[@name='create' and count(parameter)=0]" name="new">true</attr>
-  <attr path="/api/package[@name='org.opencv.android']/class[@name='Camera2Renderer']/field[@name='LOGTAG']" name="new">true</attr>
-  <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraRenderer']/field[@name='LOGTAG']" name="new">true</attr>
-  <attr path="/api/package[@name='org.opencv.engine']/class[@name='OpenCVEngineInterface.Stub']/method[@name='onTransact' and count(parameter)=4 and parameter[1][@type='int'] and parameter[2][@type='android.os.Parcel'] and parameter[3][@type='android.os.Parcel'] and parameter[4][@type='int']]" name="new">true</attr>
-
   
-
-
-
   <!--Fix incorrect Visibility-->
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraRenderer']/method[@name='setCameraPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]" name="visibility">protected</attr>
   
-  <!--.NET friendly namespace names-->
+  <!--.NET namespace names-->
   <attr path="/api/package[@name='org.opencv.core']" name="managedName">OpenCV.Core</attr>
   <attr path="/api/package[@name='org.opencv.android']" name="managedName">OpenCV.Android</attr>
   <attr path="/api/package[@name='org.opencv.calib3d']" name="managedName">OpenCV.Calib3d</attr>
