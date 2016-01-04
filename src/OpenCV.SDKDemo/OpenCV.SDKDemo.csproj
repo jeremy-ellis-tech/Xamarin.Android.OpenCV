@@ -52,7 +52,9 @@
     <Compile Include="CameraCalibration\CameraCalibrator.cs" />
     <Compile Include="CameraCalibration\OnCameraFrameRender.cs" />
     <Compile Include="CameraPreview\CameraPreviewActivity.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="ColorBlobDetection\ColorBlobDetectionActivity.cs" />
+    <Compile Include="ColorBlobDetection\ColorBlobDetector.cs" />
+    <Compile Include="MainActivity.cs" />
     <Compile Include="MixedProcessing\MixedProcessing.cs" />
     <Compile Include="Puzzle\PuzzleActivity.cs" />
     <Compile Include="Puzzle\Puzzle15Processor.cs" />
@@ -80,6 +82,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\menu\calibration.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\color_blob_detection_surface_view.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Widget;
 using OpenCV.SDKDemo.CameraCalibration;
 using OpenCV.SDKDemo.CameraPreview;
+using OpenCV.SDKDemo.ColorBlobDetection;
 using OpenCV.SDKDemo.Puzzle;
 
 namespace OpenCV.SDKDemo
@@ -31,7 +32,7 @@ namespace OpenCV.SDKDemo
                 .Click += (s, e) => Toast.MakeText(this, "Not implemented", ToastLength.Short);
 
             FindViewById<Button>(Resource.Id.colorBlobDetection)
-                .Click += (s, e) => Toast.MakeText(this, "Not implemented", ToastLength.Short);
+                .Click += (s, e) => StartActivity(typeof(ColorBlobDetectionActivity));
 
             FindViewById<Button>(Resource.Id.cameraCalibration)
                 .Click += (s, e) => StartActivity(typeof(CameraCalibrationActivity));
