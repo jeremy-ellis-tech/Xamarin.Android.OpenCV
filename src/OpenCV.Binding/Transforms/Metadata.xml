@@ -1,11 +1,31 @@
 <metadata>
-  
   <add-node path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']">
     <method name="setCvCameraViewListener" return="void" abstract="false" native="false" synchronized="false" static="false" final="false" deprecated="not deprecated" visibility="public" >
       <parameter name="listener" type="org.opencv.android.CameraBridgeViewBase.CvCameraViewListener"/>
     </method>
   </add-node>
+
+  <add-node path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']">
+    <method name="setCvCameraViewListener" return="void" abstract="false" native="false" synchronized="false" static="false" final="false" deprecated="not deprecated" visibility="public" >
+      <parameter name="listener" type="org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2"/>
+    </method>
+  </add-node>
+
+  <add-node path="/api/package[@name='org.opencv.android']/interface[@name='CameraBridgeViewBase.CvCameraViewListener2']">
+    <method name="onCameraFrame" return="org.opencv.core.Mat" abstract="false" native="false" synchronized="false" static="false" final="false" deprecated="not deprecated" visibility="public">
+      <parameter name="inputFrame" type="org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame"/>
+    </method>
+  </add-node>
+
+  <add-node path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase.CvCameraViewListenerAdapter']">
+    <method name="onCameraFrame" return="org.opencv.core.Mat" abstract="false" native="false" synchronized="false" static="false" final="false" deprecated="not deprecated" visibility="public">
+      <parameter name="inputFrame" type="org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame"/>
+    </method>
+  </add-node>
   
+  <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener']]" name="managedName">SetCvCameraViewListener</attr>
+  <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2']]" name="managedName">SetCvCameraViewListener2</attr>
+
   <!--Fix incorrect Visibility-->
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraRenderer']/method[@name='setCameraPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]" name="visibility">protected</attr>
   
