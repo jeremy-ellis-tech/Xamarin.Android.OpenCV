@@ -7,40 +7,40 @@
         android:id="@+id/cameraPreview"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="cameraPreview" />
+        android:text="Camera preview" />
     <Button
         android:id="@+id/mixedProcessing"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="mixedProcessing" />
+        android:text="Mixed processing" />
     <Button
         android:id="@+id/cameraControl"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="cameraControl" />
+        android:text="Camera control" />
     <Button
         android:id="@+id/imageManipulations"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="imageManipulations" />
+        android:text="Image manipulation" />
     <Button
         android:id="@+id/faceDetection"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="faceDetection" />
+        android:text="Face detection" />
     <Button
         android:id="@+id/colorBlobDetection"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="colorBlobDetection" />
+        android:text="Color blob detection" />
     <Button
         android:id="@+id/cameraCalibration"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="cameraCalibration" />
+        android:text="Camera calibration" />
     <Button
         android:id="@+id/puzzle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="puzzle" />
+        android:text="Puzzle" />
 </LinearLayout>
