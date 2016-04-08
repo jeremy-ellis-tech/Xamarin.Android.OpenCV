@@ -140,6 +140,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
+    <Compile Include="Additions\ImgProc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <TransformFile Include="Transforms\Metadata.xml">
       <SubType>Designer</SubType>
@@ -430,9 +431,7 @@
     <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_videostab.a" />
     <EmbeddedNativeLibrary Include="Jars\x86_64\libtbb.a" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Additions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

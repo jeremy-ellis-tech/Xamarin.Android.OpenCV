@@ -26,6 +26,10 @@
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener']]" name="managedName">SetCvCameraViewListener</attr>
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2']]" name="managedName">SetCvCameraViewListener2</attr>
 
+  <!--Re-implemented in ImgProc addition-->
+  <remove-node path="/api/package[@name='org.opencv.imgproc']/class[@name='Imgproc']/method[@name='findContours' and count(parameter)=6 and parameter[1][@type='org.opencv.core.Mat'] and parameter[2][@type='java.util.List&lt;org.opencv.core.MatOfPoint&gt;'] and parameter[3][@type='org.opencv.core.Mat'] and parameter[4][@type='int'] and parameter[5][@type='int'] and parameter[6][@type='org.opencv.core.Point']]"/>
+  <remove-node path="/api/package[@name='org.opencv.imgproc']/class[@name='Imgproc']/method[@name='findContours' and count(parameter)=5 and parameter[1][@type='org.opencv.core.Mat'] and parameter[2][@type='java.util.List&lt;org.opencv.core.MatOfPoint&gt;'] and parameter[3][@type='org.opencv.core.Mat'] and parameter[4][@type='int'] and parameter[5][@type='int']]"/>
+  
   <!--Fix incorrect Visibility-->
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraRenderer']/method[@name='setCameraPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]" name="visibility">protected</attr>
   
