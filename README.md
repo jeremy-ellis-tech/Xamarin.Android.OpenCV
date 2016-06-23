@@ -3,8 +3,6 @@ Xamarin.Android.OpenCV v3.1.0
 
 ## C# bindings for the OpenCV Android SDK ##
 
-Currently a work in progress. A nuget package will be available soon.
-
 I am not associated with either [OpenCV](http://opencv.org/) or [Xamarin .inc](http://xamarin.com/). All rights belong to their respective owners.
 
 This repository includes a C# translation of the demo applications included with OpenCV4Android.
