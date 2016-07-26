@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+  <!--
     <Button
         android:id="@+id/cameraPreview"
         android:layout_width="fill_parent"
@@ -27,12 +28,13 @@
         android:id="@+id/faceDetection"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Face detection" />
+        android:text="Face detection" /> -->
     <Button
         android:id="@+id/colorBlobDetection"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Color blob detection" />
+  <!--
     <Button
         android:id="@+id/cameraCalibration"
         android:layout_width="fill_parent"
@@ -43,4 +45,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Puzzle" />
+    <Button
+        android:id="@+id/native"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Native" /> -->
 </LinearLayout>

@@ -15,12 +15,12 @@
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
@@ -29,6 +29,12 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <Debugger>Xamarin</Debugger>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,22 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CameraCalibration\CalibrationResult.cs" />
-    <Compile Include="CameraCalibration\CameraCalibrator.cs" />
-    <Compile Include="CameraCalibration\OnCameraFrameRender.cs" />
-    <Compile Include="CameraControl\CameraControlActivity.cs" />
-    <Compile Include="CameraControl\CameraControlView.cs" />
-    <Compile Include="CameraPreview\CameraPreviewActivity.cs" />
     <Compile Include="ColorBlobDetection\ColorBlobDetectionActivity.cs" />
     <Compile Include="ColorBlobDetection\ColorBlobDetector.cs" />
-    <Compile Include="FaceDetect\DetectionBasedTracker.cs" />
-    <Compile Include="FaceDetect\FaceDetectActivity.cs" />
-    <Compile Include="ImageManipulations\ImageManipulationsActivity.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="MixedProcessing\MixedProcessing.cs" />
-    <Compile Include="Puzzle\PuzzleActivity.cs" />
-    <Compile Include="Puzzle\Puzzle15Processor.cs" />
-    <Compile Include="CameraCalibration\CameraCalibrationActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ActivityTags.cs" />
@@ -75,16 +68,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidNativeLibrary Include="lib\arm64-v8a\libdetection_based_tracker.so" />
-    <AndroidNativeLibrary Include="lib\arm64-v8a\libmixed_sample.so" />
-    <AndroidNativeLibrary Include="lib\armeabi-v7a\libdetection_based_tracker.so" />
-    <AndroidNativeLibrary Include="lib\armeabi-v7a\libmixed_sample.so" />
-    <AndroidNativeLibrary Include="lib\armeabi\libdetection_based_tracker.so" />
-    <AndroidNativeLibrary Include="lib\armeabi\libmixed_sample.so" />
-    <AndroidNativeLibrary Include="lib\x86\libdetection_based_tracker.so" />
-    <AndroidNativeLibrary Include="lib\x86\libmixed_sample.so" />
-    <AndroidNativeLibrary Include="lib\x86_64\libdetection_based_tracker.so" />
-    <AndroidNativeLibrary Include="lib\x86_64\libmixed_sample.so" />
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -127,15 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\tutorial2_surface_view.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="FaceDetect\jni\Android.mk" />
-    <Content Include="FaceDetect\jni\Application.mk" />
-    <Content Include="FaceDetect\jni\DetectionBasedTracker_jni.cpp" />
-    <Content Include="FaceDetect\jni\DetectionBasedTracker_jni.h" />
-    <Content Include="MixedProcessing\jni\Android.mk" />
-    <Content Include="MixedProcessing\jni\Application.mk" />
-    <Content Include="MixedProcessing\jni\jni_part.cpp" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="OpenCV.SDKDemo.OpenCV.SDKDemo" android:versionCode="1" android:versionName="1.0">
-	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
-	<application android:label="OpenCV.SDKDemo"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="OpenCV.SDKDemo.OpenCV.SDKDemo" android:versionCode="21" android:versionName="2.1">
+	<uses-sdk android:minSdkVersion="15" />
+	<application android:label="@string/ApplicationName"></application>
 	<uses-permission android:name="android.permission.CAMERA" />
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
 	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />

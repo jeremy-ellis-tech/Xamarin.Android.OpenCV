@@ -1,4 +1,4 @@
-Xamarin.Android.OpenCV v3.1.0
+Xamarin.Android.OpenCV v2.4.11
 ========================
 
 ## C# bindings for the OpenCV Android SDK ##
@@ -16,7 +16,7 @@ This repository includes a C# translation of the demo applications included with
 OpenCV is huge; building the OpenCV binding project for the AnyCPU platform results in a .dll which is ~64MB! If this is too large for your Android application here are some methods to reduce the size:
 
 ### 1. Using build specific platform configurations ###
-There are platform specific build configurations for each ABI supported by both Xamarin.Android and OpenCV: `arm64-v8a`, `armeabi`, `armeabi-v7a`, `x86` & `x86_64`. Building for one ABI only includes the native libraries for that platform and the Java wrappers. This reduces OpenCV.dll to ~15MB. The down-side of using this method is that it may complicate your final build process if you wish to [support multiple platforms](https://developer.xamarin.com/guides/android/advanced_topics/build-abi-specific-apks/).
+There are platform specific build configurations for each ABI supported by both Xamarin.Android and OpenCV: `armeabi`, `armeabi-v7a` & `x86`. Building for one ABI only includes the native libraries for that platform and the Java wrappers. This reduces OpenCV.dll to ~15MB. The down-side of using this method is that it may complicate your final build process if you wish to [support multiple platforms](https://developer.xamarin.com/guides/android/advanced_topics/build-abi-specific-apks/).
 
 ### 2. Using the `None` configuration ###
 If the `None` platform configuration is used no native libraries are bundled in the .dll, only the Java wrappers. The result is a .dll of ~1.5MB. However, now the native libraries must be installed at runtime. This is done using OpenCVManager, a separate application the user installs from the GooglePlay store, which installs the native OpenCV libraries once which every application that uses OpenCV on the device can use. The OpenCVLoader class provides a utility method for detecting if the OpenCV libraries are provided by the application, or the OpenCVManager apk.
@@ -25,7 +25,7 @@ If the `None` platform configuration is used no native libraries are bundled in 
             {
                 Log.Debug(TAG,
 				"Internal OpenCV library not found. Using OpenCV Manager for initialization");
-                OpenCVLoader.InitAsync(OpenCVLoader.OpencvVersion300, this, mLoaderCallback);
+                OpenCVLoader.InitAsync(OpenCVLoader.OpencvVersion2411, this, mLoaderCallback);
             }
             else
             {

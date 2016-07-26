@@ -1,20 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.Content.PM;
-using OpenCV.Core;
-using OpenCV.Android;
+using Android.OS;
 using Android.Util;
-using OpenCV.SDKDemo.Utilities;
+using Android.Views;
+using OpenCV.Android;
+using OpenCV.Core;
 using OpenCV.ImgProc;
+using OpenCV.SDKDemo.Utilities;
+using System.Collections.Generic;
 using Size = OpenCV.Core.Size;
 
 namespace OpenCV.SDKDemo.ColorBlobDetection
@@ -68,16 +62,7 @@ namespace OpenCV.SDKDemo.ColorBlobDetection
         protected override void OnResume()
         {
             base.OnResume();
-            if (!OpenCVLoader.InitDebug())
-            {
-                Log.Debug(ActivityTags.ColorBlobDetection, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
-                OpenCVLoader.InitAsync(OpenCVLoader.OpencvVersion300, this, mLoaderCallback);
-            }
-            else
-            {
-                Log.Debug(ActivityTags.ColorBlobDetection, "OpenCV library found inside package. Using it!");
-                mLoaderCallback.OnManagerConnected(LoaderCallbackInterface.Success);
-            }
+            OpenCVLoader.InitAsync(OpenCVLoader.OpencvVersion2411, this, mLoaderCallback);
         }
 
         protected override void OnDestroy()

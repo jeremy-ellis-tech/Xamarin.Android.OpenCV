@@ -12,8 +12,8 @@
     <RootNamespace>OpenCV.Binding</RootNamespace>
     <AssemblyName>OpenCV</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <JavaDocPaths>Jars\docs</JavaDocPaths>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -29,23 +29,6 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\AnyCPU</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|arm64-v8a' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\arm64-v8a</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|arm64-v8a' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\arm64-v8a</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -101,23 +84,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86_64' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\x86_64</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86_64' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\x86_64</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|None' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -146,8 +112,14 @@
     </TransformFile>
     <TransformFile Include="Transforms\EnumFields.xml" />
     <TransformFile Include="Transforms\EnumMethods.xml" />
-    <Content Include="Jars\docs\package-list" />
-    <LibraryProjectZip Include="Jars\opencv-3.1.0.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Additions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryProjectZip Include="Jars\opencv-2.4.11.zip" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Jars\docs\allclasses-frame.html" />
     <Content Include="Jars\docs\allclasses-noframe.html" />
     <Content Include="Jars\docs\constant-values.html" />
@@ -165,6 +137,8 @@
     <Content Include="Jars\docs\org\opencv\android\JavaCameraView.html" />
     <Content Include="Jars\docs\org\opencv\android\JavaCameraView.JavaCameraSizeAccessor.html" />
     <Content Include="Jars\docs\org\opencv\android\LoaderCallbackInterface.html" />
+    <Content Include="Jars\docs\org\opencv\android\NativeCameraView.html" />
+    <Content Include="Jars\docs\org\opencv\android\NativeCameraView.OpenCvSizeAccessor.html" />
     <Content Include="Jars\docs\org\opencv\android\OpenCVLoader.html" />
     <Content Include="Jars\docs\org\opencv\android\package-frame.html" />
     <Content Include="Jars\docs\org\opencv\android\package-summary.html" />
@@ -175,15 +149,12 @@
     <Content Include="Jars\docs\org\opencv\calib3d\package-summary.html" />
     <Content Include="Jars\docs\org\opencv\calib3d\package-tree.html" />
     <Content Include="Jars\docs\org\opencv\calib3d\StereoBM.html" />
-    <Content Include="Jars\docs\org\opencv\calib3d\StereoMatcher.html" />
     <Content Include="Jars\docs\org\opencv\calib3d\StereoSGBM.html" />
     <Content Include="Jars\docs\org\opencv\core\Algorithm.html" />
     <Content Include="Jars\docs\org\opencv\core\Core.html" />
     <Content Include="Jars\docs\org\opencv\core\Core.MinMaxLocResult.html" />
     <Content Include="Jars\docs\org\opencv\core\CvException.html" />
     <Content Include="Jars\docs\org\opencv\core\CvType.html" />
-    <Content Include="Jars\docs\org\opencv\core\DMatch.html" />
-    <Content Include="Jars\docs\org\opencv\core\KeyPoint.html" />
     <Content Include="Jars\docs\org\opencv\core\Mat.html" />
     <Content Include="Jars\docs\org\opencv\core\MatOfByte.html" />
     <Content Include="Jars\docs\org\opencv\core\MatOfDMatch.html" />
@@ -210,83 +181,67 @@
     <Content Include="Jars\docs\org\opencv\core\Scalar.html" />
     <Content Include="Jars\docs\org\opencv\core\Size.html" />
     <Content Include="Jars\docs\org\opencv\core\TermCriteria.html" />
-    <Content Include="Jars\docs\org\opencv\engine\package-frame.html" />
-    <Content Include="Jars\docs\org\opencv\engine\package-summary.html" />
-    <Content Include="Jars\docs\org\opencv\engine\package-tree.html" />
     <Content Include="Jars\docs\org\opencv\features2d\DescriptorExtractor.html" />
     <Content Include="Jars\docs\org\opencv\features2d\DescriptorMatcher.html" />
+    <Content Include="Jars\docs\org\opencv\features2d\DMatch.html" />
     <Content Include="Jars\docs\org\opencv\features2d\FeatureDetector.html" />
     <Content Include="Jars\docs\org\opencv\features2d\Features2d.html" />
+    <Content Include="Jars\docs\org\opencv\features2d\GenericDescriptorMatcher.html" />
+    <Content Include="Jars\docs\org\opencv\features2d\KeyPoint.html" />
     <Content Include="Jars\docs\org\opencv\features2d\package-frame.html" />
     <Content Include="Jars\docs\org\opencv\features2d\package-summary.html" />
     <Content Include="Jars\docs\org\opencv\features2d\package-tree.html" />
-    <Content Include="Jars\docs\org\opencv\imgcodecs\Imgcodecs.html" />
-    <Content Include="Jars\docs\org\opencv\imgcodecs\package-frame.html" />
-    <Content Include="Jars\docs\org\opencv\imgcodecs\package-summary.html" />
-    <Content Include="Jars\docs\org\opencv\imgcodecs\package-tree.html" />
+    <Content Include="Jars\docs\org\opencv\highgui\Highgui.html" />
+    <Content Include="Jars\docs\org\opencv\highgui\package-frame.html" />
+    <Content Include="Jars\docs\org\opencv\highgui\package-summary.html" />
+    <Content Include="Jars\docs\org\opencv\highgui\package-tree.html" />
+    <Content Include="Jars\docs\org\opencv\highgui\VideoCapture.html" />
     <Content Include="Jars\docs\org\opencv\imgproc\CLAHE.html" />
     <Content Include="Jars\docs\org\opencv\imgproc\Imgproc.html" />
-    <Content Include="Jars\docs\org\opencv\imgproc\LineSegmentDetector.html" />
     <Content Include="Jars\docs\org\opencv\imgproc\Moments.html" />
     <Content Include="Jars\docs\org\opencv\imgproc\package-frame.html" />
     <Content Include="Jars\docs\org\opencv\imgproc\package-summary.html" />
     <Content Include="Jars\docs\org\opencv\imgproc\package-tree.html" />
     <Content Include="Jars\docs\org\opencv\imgproc\Subdiv2D.html" />
-    <Content Include="Jars\docs\org\opencv\ml\ANN_MLP.html" />
-    <Content Include="Jars\docs\org\opencv\ml\Boost.html" />
-    <Content Include="Jars\docs\org\opencv\ml\DTrees.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvANN_MLP.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvANN_MLP_TrainParams.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvBoost.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvBoostParams.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvDTree.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvDTreeParams.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvERTrees.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvGBTrees.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvGBTreesParams.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvKNearest.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvNormalBayesClassifier.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvParamGrid.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvRTParams.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvRTrees.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvStatModel.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvSVM.html" />
+    <Content Include="Jars\docs\org\opencv\ml\CvSVMParams.html" />
     <Content Include="Jars\docs\org\opencv\ml\EM.html" />
-    <Content Include="Jars\docs\org\opencv\ml\KNearest.html" />
-    <Content Include="Jars\docs\org\opencv\ml\LogisticRegression.html" />
     <Content Include="Jars\docs\org\opencv\ml\Ml.html" />
-    <Content Include="Jars\docs\org\opencv\ml\NormalBayesClassifier.html" />
     <Content Include="Jars\docs\org\opencv\ml\package-frame.html" />
     <Content Include="Jars\docs\org\opencv\ml\package-summary.html" />
     <Content Include="Jars\docs\org\opencv\ml\package-tree.html" />
-    <Content Include="Jars\docs\org\opencv\ml\RTrees.html" />
-    <Content Include="Jars\docs\org\opencv\ml\StatModel.html" />
-    <Content Include="Jars\docs\org\opencv\ml\SVM.html" />
-    <Content Include="Jars\docs\org\opencv\ml\TrainData.html" />
-    <Content Include="Jars\docs\org\opencv\objdetect\BaseCascadeClassifier.html" />
     <Content Include="Jars\docs\org\opencv\objdetect\CascadeClassifier.html" />
     <Content Include="Jars\docs\org\opencv\objdetect\HOGDescriptor.html" />
     <Content Include="Jars\docs\org\opencv\objdetect\Objdetect.html" />
     <Content Include="Jars\docs\org\opencv\objdetect\package-frame.html" />
     <Content Include="Jars\docs\org\opencv\objdetect\package-summary.html" />
     <Content Include="Jars\docs\org\opencv\objdetect\package-tree.html" />
-    <Content Include="Jars\docs\org\opencv\photo\AlignExposures.html" />
-    <Content Include="Jars\docs\org\opencv\photo\AlignMTB.html" />
-    <Content Include="Jars\docs\org\opencv\photo\CalibrateCRF.html" />
-    <Content Include="Jars\docs\org\opencv\photo\CalibrateDebevec.html" />
-    <Content Include="Jars\docs\org\opencv\photo\CalibrateRobertson.html" />
-    <Content Include="Jars\docs\org\opencv\photo\MergeDebevec.html" />
-    <Content Include="Jars\docs\org\opencv\photo\MergeExposures.html" />
-    <Content Include="Jars\docs\org\opencv\photo\MergeMertens.html" />
-    <Content Include="Jars\docs\org\opencv\photo\MergeRobertson.html" />
     <Content Include="Jars\docs\org\opencv\photo\package-frame.html" />
     <Content Include="Jars\docs\org\opencv\photo\package-summary.html" />
     <Content Include="Jars\docs\org\opencv\photo\package-tree.html" />
     <Content Include="Jars\docs\org\opencv\photo\Photo.html" />
-    <Content Include="Jars\docs\org\opencv\photo\Tonemap.html" />
-    <Content Include="Jars\docs\org\opencv\photo\TonemapDrago.html" />
-    <Content Include="Jars\docs\org\opencv\photo\TonemapDurand.html" />
-    <Content Include="Jars\docs\org\opencv\photo\TonemapMantiuk.html" />
-    <Content Include="Jars\docs\org\opencv\photo\TonemapReinhard.html" />
     <Content Include="Jars\docs\org\opencv\utils\Converters.html" />
     <Content Include="Jars\docs\org\opencv\utils\package-frame.html" />
     <Content Include="Jars\docs\org\opencv\utils\package-summary.html" />
     <Content Include="Jars\docs\org\opencv\utils\package-tree.html" />
-    <Content Include="Jars\docs\org\opencv\videoio\package-frame.html" />
-    <Content Include="Jars\docs\org\opencv\videoio\package-summary.html" />
-    <Content Include="Jars\docs\org\opencv\videoio\package-tree.html" />
-    <Content Include="Jars\docs\org\opencv\videoio\VideoCapture.html" />
-    <Content Include="Jars\docs\org\opencv\videoio\Videoio.html" />
-    <Content Include="Jars\docs\org\opencv\videoio\VideoWriter.html" />
     <Content Include="Jars\docs\org\opencv\video\BackgroundSubtractor.html" />
-    <Content Include="Jars\docs\org\opencv\video\BackgroundSubtractorKNN.html" />
+    <Content Include="Jars\docs\org\opencv\video\BackgroundSubtractorMOG.html" />
     <Content Include="Jars\docs\org\opencv\video\BackgroundSubtractorMOG2.html" />
-    <Content Include="Jars\docs\org\opencv\video\DenseOpticalFlow.html" />
-    <Content Include="Jars\docs\org\opencv\video\DualTVL1OpticalFlow.html" />
     <Content Include="Jars\docs\org\opencv\video\KalmanFilter.html" />
     <Content Include="Jars\docs\org\opencv\video\package-frame.html" />
     <Content Include="Jars\docs\org\opencv\video\package-summary.html" />
@@ -295,143 +250,103 @@
     <Content Include="Jars\docs\overview-frame.html" />
     <Content Include="Jars\docs\overview-summary.html" />
     <Content Include="Jars\docs\overview-tree.html" />
-    <Content Include="Jars\docs\script.js" />
+    <Content Include="Jars\docs\resources\inherit.gif" />
     <Content Include="Jars\docs\serialized-form.html" />
     <Content Include="Jars\docs\stylesheet.css" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Platform)' == 'arm64-v8a' Or '$(Platform)' == 'AnyCPU'">
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libIlmImf.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\liblibjasper.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\liblibjpeg.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\liblibpng.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\liblibtiff.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\liblibwebp.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_calib3d.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_core.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_features2d.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_flann.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_highgui.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_imgcodecs.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_imgproc.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_java3.so" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_ml.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_objdetect.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_photo.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_shape.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_stitching.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_superres.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_video.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_videoio.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_videostab.a" />
-    <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libtbb.a" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(Platform)' == 'armeabi' Or '$(Platform)' == 'AnyCPU'">
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libIlmImf.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\liblibjasper.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\liblibjpeg.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\liblibpng.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\liblibtiff.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\liblibwebp.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_calib3d.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_core.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_features2d.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_flann.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_highgui.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_imgcodecs.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_imgproc.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_java3.so" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_ml.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_objdetect.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_photo.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_shape.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_stitching.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_superres.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_video.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_videoio.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_videostab.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi\libtbb.a" />
+  <ItemGroup>
+    <None Include="Jars\docs\package-list" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Platform)' == 'armeabi-v7a' Or '$(Platform)' == 'AnyCPU'">
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libIlmImf.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\liblibjasper.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\liblibjpeg.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\liblibpng.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\liblibtiff.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\liblibwebp.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r2.2.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r2.3.3.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r3.0.1.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r4.0.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r4.0.3.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r4.1.1.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r4.2.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r4.3.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libnative_camera_r4.4.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_androidcamera.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_calib3d.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_contrib.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_core.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_features2d.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_flann.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_highgui.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_imgcodecs.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_imgproc.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_java3.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_info.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_java.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_legacy.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_ml.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_objdetect.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_ocl.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_photo.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_shape.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_stitching.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_superres.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_ts.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_video.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_videoio.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_videostab.a" />
-    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libtbb.a" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Platform)' == 'armeabi' Or '$(Platform)' == 'AnyCPU'">
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r2.2.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r2.3.3.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r3.0.1.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r4.0.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r4.0.3.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r4.1.1.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r4.2.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r4.3.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libnative_camera_r4.4.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_androidcamera.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_calib3d.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_contrib.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_core.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_features2d.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_flann.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_highgui.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_imgproc.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_info.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_java.so" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_legacy.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_ml.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_objdetect.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_ocl.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_photo.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_stitching.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_superres.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_ts.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_video.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_videostab.a" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Platform)' == 'x86' Or '$(Platform)' == 'AnyCPU'">
-    <EmbeddedNativeLibrary Include="Jars\x86\libIlmImf.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\liblibjasper.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\liblibjpeg.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\liblibpng.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\liblibtiff.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\liblibwebp.a" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libnative_camera_r2.3.3.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libnative_camera_r3.0.1.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libnative_camera_r4.0.3.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libnative_camera_r4.1.1.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libnative_camera_r4.2.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libnative_camera_r4.3.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libnative_camera_r4.4.0.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_androidcamera.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_calib3d.a" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_contrib.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_core.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_features2d.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_flann.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_highgui.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_imgcodecs.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_imgproc.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_java3.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_info.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_java.so" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_legacy.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_ml.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_objdetect.a" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_ocl.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_photo.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_shape.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_stitching.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_superres.a" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_ts.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_video.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\libopencv_videoio.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\libopencv_videostab.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86\libtbb.a" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(Platform)' == 'x86_64' Or '$(Platform)' == 'AnyCPU'">
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libIlmImf.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\liblibjasper.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\liblibjpeg.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\liblibpng.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\liblibtiff.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\liblibwebp.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_calib3d.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_core.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_features2d.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_flann.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_highgui.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_imgcodecs.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_imgproc.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_java3.so" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_ml.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_objdetect.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_photo.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_shape.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_stitching.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_superres.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_video.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_videoio.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libopencv_videostab.a" />
-    <EmbeddedNativeLibrary Include="Jars\x86_64\libtbb.a" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Additions\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

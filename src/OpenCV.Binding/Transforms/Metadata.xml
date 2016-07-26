@@ -26,21 +26,19 @@
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener']]" name="managedName">SetCvCameraViewListener</attr>
   <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraBridgeViewBase']/method[@name='setCvCameraViewListener' and count(parameter)=1 and parameter[1][@type='org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2']]" name="managedName">SetCvCameraViewListener2</attr>
   
-  <!--Fix incorrect Visibility-->
-  <attr path="/api/package[@name='org.opencv.android']/class[@name='CameraRenderer']/method[@name='setCameraPreviewSize' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='int']]" name="visibility">protected</attr>
-  
   <!--.NET namespace names-->
   <attr path="/api/package[@name='org.opencv.core']" name="managedName">OpenCV.Core</attr>
-  <attr path="/api/package[@name='org.opencv.android']" name="managedName">OpenCV.Android</attr>
   <attr path="/api/package[@name='org.opencv.calib3d']" name="managedName">OpenCV.Calib3d</attr>
   <attr path="/api/package[@name='org.opencv.engine']" name="managedName">OpenCV.Engine</attr>
   <attr path="/api/package[@name='org.opencv.features2d']" name="managedName">OpenCV.Features2d</attr>
-  <attr path="/api/package[@name='org.opencv.imgcodecs']" name="managedName">OpenCV.ImgCodecs</attr>
   <attr path="/api/package[@name='org.opencv.imgproc']" name="managedName">OpenCV.ImgProc</attr>
   <attr path="/api/package[@name='org.opencv.ml']" name="managedName">OpenCV.ML</attr>
   <attr path="/api/package[@name='org.opencv.objdetect']" name="managedName">OpenCV.ObjDetect</attr>
   <attr path="/api/package[@name='org.opencv.photo']" name="managedName">OpenCV.Photo</attr>
   <attr path="/api/package[@name='org.opencv.utils']" name="managedName">OpenCV.Utils</attr>
   <attr path="/api/package[@name='org.opencv.video']" name="managedName">OpenCV.Video</attr>
-  <attr path="/api/package[@name='org.opencv.videoio']" name="managedName">OpenCV.VideoIO</attr>
+  <attr path="/api/package[@name='org.opencv.android']" name="managedName">OpenCV.Android</attr>
+  <attr path="/api/package[@name='org.opencv.contrib']" name="managedName">OpenCV.Contrib</attr>
+  <attr path="/api/package[@name='org.opencv.gpu']" name="managedName">OpenCV.Gpu</attr>
+  <attr path="/api/package[@name='org.opencv.highgui']" name="managedName">OpenCV.HighGui</attr>
 </metadata>
