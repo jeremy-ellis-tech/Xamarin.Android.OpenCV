@@ -253,7 +253,7 @@
     <Content Include="Jars\docs\resources\inherit.gif" />
     <Content Include="Jars\docs\serialized-form.html" />
     <Content Include="Jars\docs\stylesheet.css" />
-	<None Include="Jars\docs\package-list" />
+    <None Include="Jars\docs\package-list" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Platform)' == 'arm64-v8a' Or '$(Platform)' == 'AnyCPU'">
     <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libIlmImf.a" />
@@ -282,9 +282,10 @@
     <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_ts.a" />
     <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_video.a" />
     <EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_videostab.a" />
+	<EmbeddedNativeLibrary Include="Jars\arm64-v8a\libopencv_java.so" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Platform)' == 'armeabi-v7a' Or '$(Platform)' == 'AnyCPU'">
-      <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libIlmImf.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libIlmImf.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\liblibjasper.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\liblibjpeg.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\liblibpng.a" />
@@ -320,7 +321,7 @@
     <EmbeddedNativeLibrary Include="Jars\armeabi-v7a\libopencv_videostab.a" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Platform)' == 'armeabi' Or '$(Platform)' == 'AnyCPU'">
-      <EmbeddedNativeLibrary Include="Jars\armeabi\libIlmImf.a" />
+    <EmbeddedNativeLibrary Include="Jars\armeabi\libIlmImf.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi\liblibjasper.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi\liblibjpeg.a" />
     <EmbeddedNativeLibrary Include="Jars\armeabi\liblibpng.a" />
@@ -356,7 +357,7 @@
     <EmbeddedNativeLibrary Include="Jars\armeabi\libopencv_videostab.a" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Platform)' == 'x86' Or '$(Platform)' == 'AnyCPU'">
-      <EmbeddedNativeLibrary Include="Jars\x86\libIlmImf.a" />
+    <EmbeddedNativeLibrary Include="Jars\x86\libIlmImf.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\liblibjasper.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\liblibjpeg.a" />
     <EmbeddedNativeLibrary Include="Jars\x86\liblibpng.a" />

@@ -59,10 +59,20 @@ namespace OpenCV.SDKDemo.ColorBlobDetection
                 mOpenCvCameraView.DisableView();
         }
 
+
         protected override void OnResume()
         {
             base.OnResume();
-            OpenCVLoader.InitAsync(OpenCVLoader.OpencvVersion2411, this, mLoaderCallback);
+            if (!OpenCVLoader.InitDebug())
+            {
+                Log.Debug(ActivityTags.ColorBlobDetection, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
+                OpenCVLoader.InitAsync(OpenCVLoader.OpencvVersion2411, this, mLoaderCallback);
+            }
+            else
+            {
+                Log.Debug(ActivityTags.ColorBlobDetection, "OpenCV library found inside package. Using it!");
+                mLoaderCallback.OnManagerConnected(LoaderCallbackInterface.Success);
+            }
         }
 
         protected override void OnDestroy()
