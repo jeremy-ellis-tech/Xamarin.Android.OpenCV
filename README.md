@@ -40,6 +40,8 @@ OpenCV can now be used when `OnManagerConnected(...)` has been called with the `
 
 This is the ideal solution if you have many separate applications that use the OpenCV library. To see what the installation process involves, build the SDK demo with the `None` configuration and follow the instructions when starting it up.
 
+More tricks to reduce the final size have been suggested by [@MarcorOnline](https://github.com/MarcorOnline) [here](https://github.com/TrekDev/Xamarin.Android.OpenCV/issues/14).
+
 ## Documentation ##
 Documentation is available from [OpenCV](http://docs.opencv.org/2.4/doc/tutorials/introduction/android_binary_package/dev_with_OCV_on_Android.html). As with other Xamarin.Android binding projects, get/set method pairs have been replaced with C# properties and Events have been added to correspond with callback interface methods. Namespaces drop the `org.` prefix and are CamelCased.
 
